@@ -1,0 +1,10 @@
+{
+    auto_https off
+}
+
+:8000 {
+    root * .
+    encode zstd gzip
+    php_server
+    file_server
+}

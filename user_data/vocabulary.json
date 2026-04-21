@@ -1,0 +1,26 @@
+[
+    {
+        "word": "apple",
+        "pronunciation": "\/ˈæp.əl\/",
+        "meaning": "quả táo",
+        "example": "I eat an apple."
+    },
+    {
+        "word": "run",
+        "pronunciation": "\/rʌn\/",
+        "meaning": "chạy",
+        "example": "She runs every morning."
+    },
+    {
+        "word": "beautiful",
+        "pronunciation": "\/ˈbjuː.tɪ.fəl\/",
+        "meaning": "xinh đẹp",
+        "example": "The sunset is beautiful."
+    },
+    {
+        "word": "new_word",
+        "pronunciation": "\/...\/",
+        "meaning": "nghĩa mới",
+        "example": "Đây là câu ví dụ"
+    }
+]

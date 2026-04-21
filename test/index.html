@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Tense Practice - Bài tập chia động từ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f5f0e8;
+            font-family: 'Inter', sans-serif;
+            padding: 32px 24px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 28px; }
+        .header h1 { font-size: 32px; background: linear-gradient(135deg, #b07d52, #5b8a6e); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .badge { background: #e8e4dc; padding: 6px 16px; border-radius: 40px; font-size: 13px; display: inline-block; margin-top: 12px; }
+        
+        .input-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 28px;
+            border: 1px solid #e8e4dc;
+        }
+        .input-card label { font-weight: 600; display: block; margin-bottom: 8px; color: #b07d52; margin-top: 12px; }
+        .input-card label:first-of-type { margin-top: 0; }
+        .topic-grid {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .topic-chip {
+            background: #e8e4dc;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .topic-chip:hover, .topic-chip.active {
+            background: #b07d52;
+            color: white;
+        }
+        .gen-btn {
+            background: #5b8a6e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 15px;
+            width: 100%;
+        }
+        .gen-btn:hover { background: #4a735a; }
+        
+        .exercise-list { background: white; border-radius: 24px; border: 1px solid #e8e4dc; margin-bottom: 24px; overflow: hidden; }
+        .exercise-item { padding: 24px; border-bottom: 1px solid #e8e4dc; }
+        .exercise-item:last-child { border-bottom: none; }
+        
+        .instruction {
+            background: #f0f2f0;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #5b8a6e;
+            display: inline-block;
+        }
+        
+        .question-text {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-weight: 500;
+            background: #fefcf8;
+            padding: 12px 16px;
+            border-radius: 16px;
+            border: 1px solid #e8e4dc;
+        }
+        
+        .blank-highlight {
+            display: inline-block;
+            min-width: 140px;
+            background: #fef0e0;
+            border-bottom: 3px solid #b07d52;
+            margin: 0 4px;
+            padding: 0 8px;
+            font-weight: 700;
+            color: #b07d52;
+        }
+        
+        .verb-in-parentheses {
+            color: #5b8a6e;
+            font-weight: 600;
+            background: #e8f0ec;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+        }
+        
+        .answer-area {
+            margin-top: 16px;
+        }
+        
+        .answer-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #5b5a58;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .answer-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e8e4dc;
+            border-radius: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            background: #fefcf8;
+            transition: all 0.15s;
+        }
+        
+        .answer-input:focus {
+            outline: none;
+            border-color: #b07d52;
+            box-shadow: 0 0 0 3px rgba(176,125,82,0.1);
+        }
+        
+        .example-hint {
+            font-size: 12px;
+            color: #9b9790;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f9f6f0;
+            border-radius: 10px;
+        }
+        
+        .explanation {
+            margin-top: 16px;
+            padding: 14px;
+            background: #fef9e6;
+            border-radius: 14px;
+            font-size: 13px;
+            display: none;
+            border-left: 4px solid #b07d52;
+        }
+        .explanation.show { display: block; }
+        
+        .action-bar { display: flex; gap: 16px; justify-content: flex-end; margin-bottom: 24px; }
+        .btn { padding: 10px 24px; border-radius: 40px; font-weight: 600; border: none; cursor: pointer; font-family: inherit; }
+        .btn-primary { background: #b07d52; color: white; }
+        .btn-secondary { background: #e8e4dc; color: #4a4a48; }
+        
+        .result-panel { background: white; border-radius: 24px; padding: 20px; margin-bottom: 24px; border: 1px solid #e8e4dc; display: none; }
+        .score-big { font-size: 36px; font-weight: 700; color: #5b8a6e; }
+        
+        .chat-section { background: white; border-radius: 24px; border: 1px solid #e8e4dc; overflow: hidden; margin-top: 28px; }
+        .chat-header { background: #f5f0e8; padding: 16px 20px; font-weight: 600; }
+        .chat-messages { padding: 16px 20px; max-height: 260px; overflow-y: auto; background: #fefcf8; }
+        .chat-message { margin-bottom: 14px; padding: 10px 14px; border-radius: 16px; max-width: 85%; }
+        .chat-user { background: #e8e4dc; margin-left: auto; text-align: right; }
+        .chat-ai { background: #f0ede8; }
+        .chat-input-area { display: flex; padding: 12px 16px; gap: 12px; border-top: 1px solid #e8e4dc; }
+        .chat-input { flex: 1; padding: 10px 14px; border: 1px solid #e0dbd1; border-radius: 40px; }
+        .send-btn { background: #5b8a6e; color: white; border: none; padding: 8px 20px; border-radius: 40px; cursor: pointer; }
+        .loading { text-align: center; padding: 40px; color: #b07d52; }
+        
+        .correct-badge { color: #5b8a6e; font-weight: 600; }
+        .wrong-badge { color: #c0604a; font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📝 English Tense Practice</h1>
+        <div class="badge">✍️ Chia động từ trong ngoặc - Điền vào chỗ trống</div>
+    </div>
+
+    <div class="input-card">
+        <label>📌 Chọn chủ đề ngữ pháp:</label>
+        <div class="topic-grid" id="topicGrid">
+            <div class="topic-chip" data-topic="present_perfect">Present Perfect</div>
+            <div class="topic-chip" data-topic="past_simple">Simple Past</div>
+            <div class="topic-chip" data-topic="present_continuous">Present Continuous</div>
+            <div class="topic-chip" data-topic="future_tenses">Future Tenses</div>
+            <div class="topic-chip" data-topic="conditionals">Conditionals</div>
+        </div>
+        
+        <label>🔢 Số lượng câu hỏi:</label>
+        <select id="questionCount">
+            <option value="5">5 câu</option>
+            <option value="8" selected>8 câu</option>
+            <option value="10">10 câu</option>
+        </select>
+        
+        <button class="gen-btn" id="generateExamBtn">✨ Tạo bài tập</button>
+        <div class="example-hint" style="margin-top: 12px;">
+            💡 <strong>Cách làm:</strong> Nhìn vào động từ trong <span class="verb-in-parentheses">(ngoặc)</span>, chia nó cho đúng thì và điền vào chỗ <span class="blank-highlight">__________</span>.
+            <br>Ví dụ: She <span class="blank-highlight">__________</span> (go) to school yesterday. → Đáp án: <strong>went</strong>
+        </div>
+    </div>
+
+    <div id="examArea" style="display: none;">
+        <div id="exerciseContainer">
+            <div class="exercise-list" id="exerciseList"></div>
+        </div>
+        <div class="action-bar">
+            <button class="btn btn-secondary" id="similarBtn">🔄 Làm đề khác</button>
+            <button class="btn btn-primary" id="submitBtn">✅ Nộp bài & chấm điểm</button>
+        </div>
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <div class="chat-section">
+        <div class="chat-header">🤖 Trợ lý AI - Giải thích ngữ pháp</div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message chat-ai">👋 Chào bạn! Hãy chọn chủ đề và bấm "Tạo bài tập" để bắt đầu. Sau khi nộp bài, bạn có thể hỏi mình giải thích từng câu nhé!</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" class="chat-input" placeholder="VD: Giải thích câu 3 giúp mình, hoặc Present perfect là gì?">
+            <button id="sendChatBtn" class="send-btn">Gửi</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentQuestions = [];
+    let userAnswers = [];
+    let submitted = false;
+    let currentTopic = "past_simple";
+
+    const questionBank = {
+        present_perfect: [
+            { text: "She ______ (live) in Hanoi since 2019.", correct: "has lived", explanation: "✅ 'Since 2019' → hành động bắt đầu trong quá khứ và kéo dài đến hiện tại → dùng hiện tại hoàn thành 'has lived'." },
+            { text: "I ______ (never / eat) sushi before.", correct: "have never eaten", explanation: "✅ 'Never' + 'before' → diễn tả trải nghiệm chưa từng có → hiện tại hoàn thành 'have never eaten'." },
+            { text: "They ______ (just / finish) their homework.", correct: "have just finished", explanation: "✅ 'Just' (vừa mới) → dấu hiệu của hiện tại hoàn thành → 'have just finished'." },
+            { text: "______ you ever ______ (be) to London?", correct: "Have been", explanation: "✅ 'Ever' → câu hỏi về trải nghiệm → hiện tại hoàn thành 'Have you ever been'." },
+            { text: "He ______ (work) here for 5 years.", correct: "has worked", explanation: "✅ 'For + khoảng thời gian' → hiện tại hoàn thành 'has worked'." },
+            { text: "We ______ (already / see) that movie.", correct: "have already seen", explanation: "✅ 'Already' → nhấn mạnh hành động đã xảy ra → hiện tại hoàn thành 'have already seen'." },
+            { text: "She ______ (not / finish) her report yet.", correct: "hasn't finished", explanation: "✅ 'Yet' → dùng trong câu phủ định của hiện tại hoàn thành → 'hasn't finished'." },
+            { text: "This is the best cake I ______ (ever / taste).", correct: "have ever tasted", explanation: "✅ So sánh nhất + 'ever' → hiện tại hoàn thành 'have ever tasted'." }
+        ],
+        past_simple: [
+            { text: "I ______ (go) to the cinema yesterday.", correct: "went", explanation: "✅ 'Yesterday' → thời gian xác định trong quá khứ → quá khứ đơn 'went'." },
+            { text: "She ______ (not / eat) breakfast this morning.", correct: "didn't eat", explanation: "✅ 'This morning' (đã qua) → quá khứ đơn phủ định 'didn't eat'." },
+            { text: "______ you ______ (see) the movie last night?", correct: "Did see", explanation: "✅ 'Last night' → quá khứ đơn dạng nghi vấn 'Did you see'." },
+            { text: "They ______ (buy) a new car last week.", correct: "bought", explanation: "✅ 'Last week' → quá khứ đơn 'bought' (bất quy tắc)." },
+            { text: "He ______ (be) very happy when he heard the news.", correct: "was", explanation: "✅ Kể lại sự việc đã xảy ra → quá khứ đơn 'was'." },
+            { text: "We ______ (meet) our old friends at the party.", correct: "met", explanation: "✅ Sự việc đã kết thúc trong quá khứ → 'met'." },
+            { text: "She ______ (study) French when she was in high school.", correct: "studied", explanation: "✅ 'When she was in high school' → quá khứ đơn 'studied'." },
+            { text: "I ______ (not / watch) TV last night.", correct: "didn't watch", explanation: "✅ 'Last night' → quá khứ đơn phủ định 'didn't watch'." }
+        ],
+        present_continuous: [
+            { text: "Look! It ______ (rain) heavily.", correct: "is raining", explanation: "✅ 'Look!' → dấu hiệu của hành động đang xảy ra ngay lúc nói → hiện tại tiếp diễn 'is raining'." },
+            { text: "She ______ (study) for her exam right now.", correct: "is studying", explanation: "✅ 'Right now' → hiện tại tiếp diễn 'is studying'." },
+            { text: "They ______ (build) a new school in our neighborhood.", correct: "are building", explanation: "✅ Hành động đang diễn ra xung quanh thời điểm nói → 'are building'." },
+            { text: "I ______ (read) a very interesting book these days.", correct: "am reading", explanation: "✅ 'These days' → hành động tạm thời → 'am reading'." },
+            { text: "He ______ (always / complain) about his job!", correct: "is always complaining", explanation: "✅ 'Always' + V-ing → phàn nàn về thói quen khó chịu → 'is always complaining'." }
+        ],
+        future_tenses: [
+            { text: "They ______ (fly) to Paris next Monday.", correct: "will fly", explanation: "✅ 'Next Monday' → tương lai đơn 'will fly'." },
+            { text: "By 2026, I ______ (graduate) from university.", correct: "will have graduated", explanation: "✅ 'By + mốc thời gian' → tương lai hoàn thành 'will have graduated'." },
+            { text: "Look at those clouds! It ______ (rain).", correct: "is going to rain", explanation: "✅ Dấu hiệu từ hiện tại → 'be going to' → 'is going to rain'." },
+            { text: "The train ______ (leave) at 7 PM tomorrow.", correct: "leaves", explanation: "✅ Lịch trình cố định → hiện tại đơn 'leaves'." },
+            { text: "This time next week, we ______ (lie) on the beach.", correct: "will be lying", explanation: "✅ 'This time next week' → tương lai tiếp diễn 'will be lying'." }
+        ],
+        conditionals: [
+            { text: "If it ______ (rain), we will cancel the picnic.", correct: "rains", explanation: "✅ Câu điều kiện loại 1: if + hiện tại đơn → 'rains'." },
+            { text: "If I ______ (be) you, I would study harder.", correct: "were", explanation: "✅ Câu điều kiện loại 2: dùng 'were' cho tất cả các ngôi." },
+            { text: "She would have passed if she ______ (study) more.", correct: "had studied", explanation: "✅ Điều kiện loại 3: if + quá khứ hoàn thành → 'had studied'." },
+            { text: "If we ______ (leave) now, we won't be late.", correct: "leave", explanation: "✅ Loại 1: hiện tại đơn 'leave'." },
+            { text: "What would you do if you ______ (win) the lottery?", correct: "won", explanation: "✅ Loại 2: quá khứ đơn 'won'." }
+        ]
+    };
+
+    function getQuestionsByTopic(topic, count) {
+        let bank = questionBank[topic];
+        if (!bank) bank = questionBank.past_simple;
+        let shuffled = [...bank];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled.slice(0, count);
+    }
+
+    function generateExercises() {
+        const questionCount = parseInt(document.getElementById("questionCount").value);
+        const questions = getQuestionsByTopic(currentTopic, questionCount);
+        
+        currentQuestions = questions.map((q, idx) => ({
+            id: idx,
+            text: q.text,
+            correctAnswer: q.correct.toLowerCase(),
+            explanation: q.explanation
+        }));
+        
+        userAnswers = new Array(currentQuestions.length).fill("");
+        submitted = false;
+        renderExercises();
+        document.getElementById("examArea").style.display = "block";
+        document.getElementById("resultPanel").style.display = "none";
+        
+        const topicName = document.querySelector(`.topic-chip[data-topic="${currentTopic}"]`)?.innerText || currentTopic;
+        document.getElementById("chatMessages").innerHTML = `<div class="chat-message chat-ai">📚 Đã tạo ${questionCount} câu về chủ đề "${topicName}". Điền câu trả lời vào ô bên dưới mỗi câu rồi bấm "Nộp bài" nhé!</div>`;
+    }
+
+    function renderExercises() {
+        if (!currentQuestions.length) return;
+        let html = `<div class="exercise-list">`;
+        currentQuestions.forEach((q, idx) => {
+            // Tách câu hỏi để highlight chỗ trống và động từ
+            let displayText = q.text;
+            displayText = displayText.replace(/\(([^)]+)\)/, '<span class="verb-in-parentheses">($1)</span>');
+            displayText = displayText.replace(/______/g, '<span class="blank-highlight">__________</span>');
+            
+            html += `
+                <div class="exercise-item">
+                    <div class="instruction">📝 Câu ${idx+1}: Chia động từ trong <span class="verb-in-parentheses">(ngoặc)</span></div>
+                    <div class="question-text">${displayText}</div>
+                    <div class="answer-area">
+                        <div class="answer-label">✍️ Câu trả lời của bạn:</div>
+                        <input type="text" class="answer-input" data-idx="${idx}" 
+                               placeholder="Ví dụ: went, has lived, is raining..." 
+                               value="${escapeHtml(userAnswers[idx] || '')}" 
+                               ${submitted ? 'disabled' : ''}>
+                        <div class="example-hint">💡 Gợi ý: Hãy viết động từ đã được chia đúng thì</div>
+                    </div>
+                    <div id="exp-${idx}" class="explanation"></div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        document.getElementById("exerciseList").innerHTML = html;
+        
+        if (!submitted) {
+            document.querySelectorAll(".answer-input").forEach(inp => {
+                inp.addEventListener("input", (e) => {
+                    let idx = parseInt(e.target.dataset.idx);
+                    userAnswers[idx] = e.target.value;
+                });
+            });
+        }
+    }
+
+    function escapeHtml(str) { 
+        if (!str) return '';
+        return str.replace(/[&<>]/g, m => m === '&' ? '&amp;' : m === '<' ? '&lt;' : '&gt;');
+    }
+
+    function submitAndGrade() {
+        if (submitted) { alert("Bạn đã nộp bài rồi! Hãy tạo đề mới."); return; }
+        if (!currentQuestions.length) return;
+        submitted = true;
+        let score = 0;
+        
+        for (let i = 0; i < currentQuestions.length; i++) {
+            const userAns = (userAnswers[i] || "").trim().toLowerCase();
+            const isCorrect = userAns === currentQuestions[i].correctAnswer;
+            if (isCorrect) score++;
+            const expDiv = document.getElementById(`exp-${i}`);
+            if (expDiv) {
+                expDiv.innerHTML = `<strong>${isCorrect ? '✅ Đúng' : '❌ Sai'}</strong><br>${currentQuestions[i].explanation}<br><span style="color:#b07d52;">📌 Đáp án đúng: "<strong>${currentQuestions[i].correctAnswer}</strong>"</span>`;
+                expDiv.classList.add('show');
+            }
+        }
+        
+        const resultDiv = document.getElementById("resultPanel");
+        resultDiv.style.display = "block";
+        const percent = (score / currentQuestions.length) * 100;
+        let message = "";
+        if (percent >= 90) message = "🎉 Xuất sắc! Bạn đã nắm vững kiến thức!";
+        else if (percent >= 70) message = "👍 Tốt lắm! Hãy xem giải thích để cải thiện nhé.";
+        else if (percent >= 50) message = "📖 Khá! Hãy học lại lý thuyết và thử lại.";
+        else message = "🌱 Đừng nản! Hãy hỏi trợ lý AI để được giải thích chi tiết.";
+        
+        resultDiv.innerHTML = `
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+                <div><span class="score-big">${score}/${currentQuestions.length}</span></div>
+                <div>${message}</div>
+                <button id="explainAllBtn" class="btn btn-secondary" style="padding:8px 20px;">🔍 Xem giải thích tất cả</button>
+            </div>
+        `;
+        
+        document.getElementById("explainAllBtn")?.addEventListener("click", () => {
+            for (let i = 0; i < currentQuestions.length; i++) {
+                const expDiv = document.getElementById(`exp-${i}`);
+                if (expDiv) expDiv.classList.add('show');
+            }
+        });
+        
+        renderExercises();
+    }
+
+    function similarExam() {
+        generateExercises();
+    }
+
+    function chatWithAI() {
+        const question = document.getElementById("chatInput").value.trim();
+        if (!question) return;
+        
+        const chatDiv = document.getElementById("chatMessages");
+        chatDiv.innerHTML += `<div class="chat-message chat-user">🙋 ${escapeHtml(question)}</div>`;
+        document.getElementById("chatInput").value = "";
+        chatDiv.innerHTML += `<div class="chat-message chat-ai">🤖 Đang phân tích...</div>`;
+        chatDiv.scrollTop = chatDiv.scrollHeight;
+        
+        let reply = "";
+        const lowerQuestion = question.toLowerCase();
+        
+        // Tìm câu hỏi theo số
+        const matchNum = lowerQuestion.match(/câu (\d+)/);
+        if (matchNum && currentQuestions[parseInt(matchNum[1]) - 1]) {
+            const idx = parseInt(matchNum[1]) - 1;
+            reply = `📘 ${currentQuestions[idx].explanation}`;
+        }
+        else if (lowerQuestion.includes("present perfect") || lowerQuestion.includes("hiện tại hoàn thành")) {
+            reply = "📘 Present Perfect (hiện tại hoàn thành) dùng để diễn tả: (1) Hành động bắt đầu trong quá khứ kéo dài đến nay (since/for), (2) Kinh nghiệm (ever/never), (3) Hành động vừa mới xảy ra (just/already/yet). Công thức: have/has + V3/ed.";
+        }
+        else if (lowerQuestion.includes("past simple") || lowerQuestion.includes("quá khứ đơn")) {
+            reply = "📘 Simple Past (quá khứ đơn) dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ, có thời gian xác định như yesterday, last week, ago. Công thức: V2/ed (động từ có quy tắc thêm -ed, bất quy tắc tra cột 2).";
+        }
+        else if (lowerQuestion.includes("conditional") || lowerQuestion.includes("điều kiện")) {
+            reply = "📘 Câu điều kiện: Loại 1 (có thật ở hiện tại/tương lai): If + hiện tại đơn, will + V. Loại 2 (không có thật ở hiện tại): If + quá khứ đơn, would + V. Loại 3 (không có thật trong quá khứ): If + quá khứ hoàn thành, would have + V3/ed.";
+        }
+        else {
+            reply = "💡 Bạn có thể hỏi mình: 'Giải thích câu 3', 'Present perfect là gì?', 'Cách dùng since và for', hoặc 'Câu điều kiện loại 2' nhé!";
+        }
+        
+        setTimeout(() => {
+            const msgs = document.querySelectorAll(".chat-message");
+            if (msgs[msgs.length-1].innerText.includes("Đang phân tích")) msgs[msgs.length-1].remove();
+            chatDiv.innerHTML += `<div class="chat-message chat-ai">🤖 ${reply}</div>`;
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }, 300);
+    }
+
+    document.querySelectorAll(".topic-chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+            document.querySelectorAll(".topic-chip").forEach(c => c.classList.remove("active"));
+            chip.classList.add("active");
+            currentTopic = chip.dataset.topic;
+            generateExercises();
+        });
+    });
+    
+    document.getElementById("generateExamBtn").addEventListener("click", generateExercises);
+    document.getElementById("submitBtn").addEventListener("click", submitAndGrade);
+    document.getElementById("similarBtn").addEventListener("click", similarExam);
+    document.getElementById("sendChatBtn").addEventListener("click", chatWithAI);
+    document.getElementById("chatInput").addEventListener("keypress", (e) => { if(e.key === "Enter") chatWithAI(); });
+    
+    generateExercises();
+</script>
+</body>
+</html>

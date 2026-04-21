@@ -1,0 +1,78 @@
+{
+    "settings": {
+        "dataPath": "user_data\\studio",
+        "aiModel": "local-rule-based",
+        "learningFontSize": 14,
+        "activeWorkspaceId": "ws-english",
+        "selectedPracticeSkill": "Listening"
+    },
+    "workspaces": [
+        {
+            "id": "ws-english",
+            "name": "English",
+            "language": "English",
+            "pages": [
+                {
+                    "id": "page-mo5dxtu1-3wj6zs",
+                    "title": "Hiện tại đơn",
+                    "parentId": null,
+                    "folder": "",
+                    "tags": [],
+                    "markdown": "<h1 id=\"heading-page-mo5dxtu1-3wj6zs-0\"><p><span style=\"font-weight: normal;\">thêm các block: <\/span><\/p><p><span style=\"font-weight: normal;\">text , heading1, heading2, heading3 heading4, bulleted list, numbered list, to-do list, toggle list, page, Callout, Quote, table, divider, link to page, ( đây là nhóm basic)<\/span><\/p><p><span style=\"font-weight: normal;\">image, video, audio, code, file ( đây là nhóm media)<\/span><\/p><p><span style=\"font-weight: normal;\">table view, board view, gallery view, list view, feed view, dashboard view, calendar view, tiemline view, mapview, vertical bar chart, horizontal bar chart, line chart, number chart (nhóm view)<\/span><\/p><p><span style=\"font-weight: normal;\">inline equation, emoji (nhóm inline)<\/span><\/p><p><span style=\"font-weight: normal;\"><\/span><\/p><p><font color=\"#0075de\"><span style=\"background-color: rgb(242, 249, 255);\"><br><\/span><\/font><\/p><\/h1>",
+                    "updatedAt": "2026-04-20T09:56:45.482Z"
+                },
+                {
+                    "id": "page-mo5drfd4-s5c600",
+                    "title": "Trang kiến thức mới",
+                    "parentId": null,
+                    "folder": "",
+                    "tags": [],
+                    "markdown": "<h1 id=\"heading-page-mo5drfd4-s5c600-0\">Tiêu đề mới<\/h1><div><h3 id=\"heading-page-mo5drfd4-s5c600-1\">Tiêu đề cấp ba<\/h3><h1 id=\"heading-page-mo5drfd4-s5c600-2\">Tiêu đề mới<\/h1><h2 id=\"heading-page-mo5drfd4-s5c600-3\">Tiêu đề phụ<\/h2><h1 id=\"heading-page-mo5drfd4-s5c600-4\">Tiêu đề mới<\/h1><h2 id=\"heading-page-mo5drfd4-s5c600-5\">Tiêu đề phụ<\/h2><h3 id=\"heading-page-mo5drfd4-s5c600-6\">Tiêu đề cấp ba<\/h3><\/div><div><\/div><div><\/div><div><\/div><div><\/div><div><\/div><h1 id=\"heading-page-mo5drfd4-s5c600-0\"><\/h1>",
+                    "updatedAt": "2026-04-19T11:31:46.234Z"
+                },
+                {
+                    "id": "page-mo5dro71-sypsel",
+                    "title": "Trang con mới",
+                    "parentId": "page-mo5drfd4-s5c600",
+                    "folder": "Trang kiến thức mới",
+                    "tags": [],
+                    "markdown": "<h1>Trang kiến thức mới<\/h1><p>Nhập ghi chú tại đây.<\/p>",
+                    "updatedAt": "2026-04-19T11:31:46.234Z"
+                }
+            ],
+            "exercises": [],
+            "attempts": [],
+            "mistakes": [],
+            "tests": []
+        },
+        {
+            "id": "ws-mo5fjewi-jycoo0",
+            "name": "Tiếng nhật",
+            "language": "Tiếng nhật",
+            "pages": [
+                {
+                    "id": "page-mo5fjewi-dc7kis",
+                    "title": "Trang kiến thức mới",
+                    "parentId": null,
+                    "folder": "",
+                    "tags": [],
+                    "markdown": "<h1 id=\"heading-page-mo5fjewi-dc7kis-0\"><br><\/h1><div><\/div><div><\/div><div><\/div><div><\/div><div><\/div><h1 id=\"heading-page-mo5fjewi-dc7kis-0\"><\/h1><div><div><\/div><div><\/div><\/div>\n<!-- notionvc: fbf6d871-31e1-4c06-8c5d-7a98e607c22e -->",
+                    "updatedAt": "2026-04-19T12:14:00.914Z"
+                },
+                {
+                    "id": "page-mo5i4j9b-ot2pic",
+                    "title": "Trang con mới",
+                    "parentId": "page-mo5fjewi-dc7kis",
+                    "folder": "Trang kiến thức mới",
+                    "tags": [],
+                    "markdown": "<h1>Trang kiến thức mới<\/h1><p><br><\/p>",
+                    "updatedAt": "2026-04-19T12:14:00.914Z"
+                }
+            ],
+            "exercises": [],
+            "attempts": [],
+            "mistakes": [],
+            "tests": []
+        }
+    ]
+}

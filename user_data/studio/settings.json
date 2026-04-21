@@ -1,0 +1,7 @@
+{
+    "dataPath": "user_data\\studio",
+    "aiModel": "local-rule-based",
+    "learningFontSize": 14,
+    "activeWorkspaceId": "ws-english",
+    "selectedPracticeSkill": "Listening"
+}

@@ -1,0 +1,48 @@
+{
+    "settings": {
+        "dataPath": "user_data\/studio.json",
+        "aiModel": "local-rule-based",
+        "activeWorkspaceId": "ws-english",
+        "selectedPracticeSkill": "Vocabulary"
+    },
+    "workspaces": [
+        {
+            "id": "ws-english",
+            "name": "English",
+            "language": "English",
+            "pages": [
+                {
+                    "id": "page-mo5dxtu1-3wj6zs",
+                    "title": "Hiện tại đơn",
+                    "parentId": null,
+                    "folder": "",
+                    "tags": [],
+                    "markdown": "<h1>Trang kiến thức mới<\/h1><p>Nhập ghi chú tại đây.<\/p>",
+                    "updatedAt": "2026-04-19T06:42:01.096Z"
+                },
+                {
+                    "id": "page-mo5drfd4-s5c600",
+                    "title": "Trang kiến thức mới",
+                    "parentId": null,
+                    "folder": "",
+                    "tags": [],
+                    "markdown": "<h1><br><\/h1>",
+                    "updatedAt": "2026-04-19T06:29:57.634Z"
+                },
+                {
+                    "id": "page-mo5dro71-sypsel",
+                    "title": "Trang con mới",
+                    "parentId": "page-mo5drfd4-s5c600",
+                    "folder": "Trang kiến thức mới",
+                    "tags": [],
+                    "markdown": "<h1>Trang kiến thức mới<\/h1><p>Nhập ghi chú tại đây.<\/p>",
+                    "updatedAt": "2026-04-19T06:29:57.634Z"
+                }
+            ],
+            "exercises": [],
+            "attempts": [],
+            "mistakes": [],
+            "tests": []
+        }
+    ]
+}
