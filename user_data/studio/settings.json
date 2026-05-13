@@ -1,7 +1,14 @@
 {
     "dataPath": "user_data\\studio",
-    "aiModel": "local-rule-based",
-    "learningFontSize": 14,
+    "aiModel": "external-chat-model",
+    "learningFontSize": 12,
     "activeWorkspaceId": "ws-english",
-    "selectedPracticeSkill": "Listening"
+    "selectedPracticeSkill": "Foundation",
+    "aiConfig": {
+        "provider": "gemini",
+        "endpoint": "https:\/\/generativelanguage.googleapis.com\/v1beta\/models",
+        "model": "gemini-flash-latest",
+        "maxTokens": 1200,
+        "systemPrompt": "Bạn là trợ lý tiếng Anh cho người Việt. Khi được yêu cầu trả JSON thì chỉ trả JSON hợp lệ."
+    }
 }

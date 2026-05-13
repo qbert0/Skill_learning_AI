@@ -1,0 +1,141 @@
+[
+    {
+        "id": "ex-mp1zwvj0-2h29j4",
+        "workspaceId": "ws-english",
+        "skill": "Foundation",
+        "title": "ba122",
+        "sourcePrompt": "she __ to schoole everyday",
+        "durationMinutes": null,
+        "questions": [
+            {
+                "type": "multiple_choice_blank",
+                "prompt": "Choose the correct answer to complete the sentence.",
+                "gradingMode": "expected",
+                "explanation": "Câu diễn tả thói quen hàng ngày ở hiện tại đơn với chủ ngữ ngôi thứ 3 số ít.",
+                "items": [
+                    {
+                        "id": "item-mp1zwviz-tiby2c",
+                        "prompt": "she __ to school everyday",
+                        "expected": "goes",
+                        "explanation": "Với chủ ngữ là 'she', động từ 'go' phải thêm 'es' thành 'goes' ở thì hiện tại đơn.",
+                        "choices": [
+                            "go",
+                            "goes",
+                            "going",
+                            "went"
+                        ]
+                    }
+                ],
+                "id": "q-mp1zwviz-z8swn0"
+            }
+        ],
+        "createdAt": "2026-05-12T02:12:35.100Z"
+    },
+    {
+        "id": "ex-mo9xc8ik-crtyuz",
+        "workspaceId": "ws-english",
+        "skill": "Foundation",
+        "title": "Bài2",
+        "sourcePrompt": "",
+        "questions": [
+            {
+                "id": "q0-mo9xc8ik-0v6s98",
+                "skill": "Foundation",
+                "type": "multiple_choice_blank",
+                "prompt": "Chọn đáp án đúng vào chỗ trống",
+                "items": [
+                    {
+                        "id": "item0-mo9xc8ik-3jjqej",
+                        "prompt": "She áda ád",
+                        "expected": "ád",
+                        "explanation": "",
+                        "choices": [
+                            "ád",
+                            "a",
+                            "ád",
+                            "a"
+                        ]
+                    }
+                ],
+                "explanation": "Chọn đáp án đúng để điền vào chỗ trống.",
+                "gradingMode": "expected"
+            }
+        ],
+        "createdAt": "2026-04-22T10:42:59.996Z",
+        "durationMinutes": null
+    },
+    {
+        "id": "ex-mo9djq0f-ojxhu2",
+        "workspaceId": "ws-english",
+        "skill": "Foundation",
+        "title": "Bài 1",
+        "sourcePrompt": "",
+        "questions": [
+            {
+                "id": "q0-mo9djq0f-xpe5jo",
+                "skill": "Foundation",
+                "type": "multiple_choice_blank",
+                "prompt": "Chọn đáp án đúng vào chỗ trống",
+                "items": [
+                    {
+                        "id": "item0-mo9djq0e-x072sa",
+                        "prompt": "She __ very nice",
+                        "expected": "is",
+                        "explanation": "",
+                        "choices": [
+                            "is",
+                            "are",
+                            "a",
+                            "am"
+                        ]
+                    },
+                    {
+                        "id": "item1-mo9djq0e-sxs83d",
+                        "prompt": "She __ very nice",
+                        "expected": "is",
+                        "explanation": "",
+                        "choices": [
+                            "is",
+                            "am",
+                            "are",
+                            "the"
+                        ]
+                    },
+                    {
+                        "id": "item2-mo9djq0e-a1izr1",
+                        "prompt": "She __ very nice",
+                        "expected": "is",
+                        "explanation": "",
+                        "choices": [
+                            "a",
+                            "is",
+                            "are",
+                            "am"
+                        ]
+                    }
+                ],
+                "explanation": "Chọn đáp án đúng để điền vào chỗ trống.",
+                "gradingMode": "expected"
+            },
+            {
+                "id": "q1-mo9dk8ye-9esee0",
+                "skill": "Foundation",
+                "type": "rewrite_sentence",
+                "prompt": "Viết lại câu cho đúng",
+                "items": [
+                    {
+                        "id": "item0-mo9dk8ye-512dy9",
+                        "prompt": "She are very nice",
+                        "expected": "She is very nice",
+                        "explanation": "",
+                        "choices": []
+                    }
+                ],
+                "explanation": "Viết lại câu cho đúng ngữ pháp.",
+                "gradingMode": "expected"
+            }
+        ],
+        "createdAt": "2026-04-22T01:28:56.943Z",
+        "durationMinutes": null
+    }
+]

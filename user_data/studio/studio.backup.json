@@ -1,10 +1,17 @@
 {
     "settings": {
         "dataPath": "user_data\\studio",
-        "aiModel": "local-rule-based",
-        "learningFontSize": 14,
+        "aiModel": "external-chat-model",
+        "learningFontSize": 12,
         "activeWorkspaceId": "ws-english",
-        "selectedPracticeSkill": "Listening"
+        "selectedPracticeSkill": "Foundation",
+        "aiConfig": {
+            "provider": "gemini",
+            "endpoint": "https:\/\/generativelanguage.googleapis.com\/v1beta\/models",
+            "model": "gemini-flash-latest",
+            "maxTokens": 1200,
+            "systemPrompt": "Bạn là trợ lý tiếng Anh cho người Việt. Khi được yêu cầu trả JSON thì chỉ trả JSON hợp lệ."
+        }
     },
     "workspaces": [
         {
@@ -13,35 +20,331 @@
             "language": "English",
             "pages": [
                 {
-                    "id": "page-mo5dxtu1-3wj6zs",
+                    "id": "page-motyzodh-40qs4n",
                     "title": "Hiện tại đơn",
                     "parentId": null,
                     "folder": "",
                     "tags": [],
-                    "markdown": "<h1 id=\"heading-page-mo5dxtu1-3wj6zs-0\"><p><span style=\"font-weight: normal;\">thêm các block: <\/span><\/p><p><span style=\"font-weight: normal;\">text , heading1, heading2, heading3 heading4, bulleted list, numbered list, to-do list, toggle list, page, Callout, Quote, table, divider, link to page, ( đây là nhóm basic)<\/span><\/p><p><span style=\"font-weight: normal;\">image, video, audio, code, file ( đây là nhóm media)<\/span><\/p><p><span style=\"font-weight: normal;\">table view, board view, gallery view, list view, feed view, dashboard view, calendar view, tiemline view, mapview, vertical bar chart, horizontal bar chart, line chart, number chart (nhóm view)<\/span><\/p><p><span style=\"font-weight: normal;\">inline equation, emoji (nhóm inline)<\/span><\/p><p><span style=\"font-weight: normal;\"><\/span><\/p><p><font color=\"#0075de\"><span style=\"background-color: rgb(242, 249, 255);\"><br><\/span><\/font><\/p><\/h1>",
-                    "updatedAt": "2026-04-20T09:56:45.482Z"
+                    "markdown": "",
+                    "updatedAt": "2026-05-11T12:13:12.013Z"
                 },
                 {
-                    "id": "page-mo5drfd4-s5c600",
-                    "title": "Trang kiến thức mới",
+                    "id": "page-mo5dxtu1-3wj6zs",
+                    "title": "Hiện tại n",
                     "parentId": null,
                     "folder": "",
                     "tags": [],
-                    "markdown": "<h1 id=\"heading-page-mo5drfd4-s5c600-0\">Tiêu đề mới<\/h1><div><h3 id=\"heading-page-mo5drfd4-s5c600-1\">Tiêu đề cấp ba<\/h3><h1 id=\"heading-page-mo5drfd4-s5c600-2\">Tiêu đề mới<\/h1><h2 id=\"heading-page-mo5drfd4-s5c600-3\">Tiêu đề phụ<\/h2><h1 id=\"heading-page-mo5drfd4-s5c600-4\">Tiêu đề mới<\/h1><h2 id=\"heading-page-mo5drfd4-s5c600-5\">Tiêu đề phụ<\/h2><h3 id=\"heading-page-mo5drfd4-s5c600-6\">Tiêu đề cấp ba<\/h3><\/div><div><\/div><div><\/div><div><\/div><div><\/div><div><\/div><h1 id=\"heading-page-mo5drfd4-s5c600-0\"><\/h1>",
-                    "updatedAt": "2026-04-19T11:31:46.234Z"
+                    "markdown": "P13 — Mở rộng Agentic BPM với Ngôn ngữ Goal-Process-Agent Alignment\nPhương pháp nền: Agentic BPM + BPMN 2.0 + agent programming \/ multi-agent organization models\nKhả năng mở rộng: Đề xuất một DSL để mô tả quan hệ giữa organizational goals, process frames, delegated goals, autonomy bounds, và human override trong hệ thống agentic\n\n1. Phương pháp nền và điểm có thể phát triển\nAgentic BPM\nAgentic BPM là hướng rất mới trong đó:\n\nsoftware agents và human agents trở thành functional entities chính\nprocess không còn chỉ là luồng task cứng\nmột số bước được giao cho agent tự suy luận và ra quyết định\nTheo research manifesto 2026, agentic BPM cần:\n\nframed autonomy\nexplainability\nconversational actionability\nself-modification trong giới hạn\nBPMN 2.0\nBPMN vẫn là nền rất mạnh để mô tả:\n\nsequencing\nbranching\norchestration\ncollaboration\nNhưng BPMN yếu ở việc mô tả:\n\nautonomy bound\ndelegated goal\nexplanation duty\nescalation to human\nAgent languages và MAS organization models\nCác agent languages như:\n\nAgentSpeak\/Jason\nGOAL\nASTRA\nJadex\nđã rất mạnh trong mô tả:\n\nbelief-desire-intention\nlocal planning\ncommunication\ninternal reasoning\nNhưng chúng không được thiết kế để mô tả rõ:\n\norganizational process frame\nprocess-level accountability\nbusiness-goal alignment\nĐiểm có thể phát triển hơn\nĐây là điểm mấu chốt:\n\nta đã có language cho agent, có language cho process, có language cho goals, nhưng chưa có một language chung để mô tả sự alignment giữa ba lớp đó\n\nCác câu hỏi hiện tại chưa có công cụ biểu đạt tốt:\n\ngoal tổ chức nào được giao cho agent nào?\nagent được quyền quyết trong phạm vi nào?\nkhi nào agent phải giải thích?\nkhi nào agent phải escalate?\nbước nào là deterministic, bước nào là agentic?\nDo đó, điểm mở rộng tự nhiên là:\n\nthêm một DSL goal-process-agent alignment cho agentic process systems\n\n1. Định nghĩa lõi của AgenticFlow-Goal\nÝ tưởng tổng quát\nAgenticFlow-Goal là một DSL đặt trên giao điểm của:\n\ngoal model\nBPMN process model\nagent role \/ capability description\nMục tiêu không phải thay BPMN, cũng không thay agent programming language. Mục tiêu là đặc tả rõ:\n\ngoal nào là organizational goal\ngoal nào được delegated xuống agent\nprocess step nào được phép là agentic\nautonomy được cấp đến đâu\nkhi nào bắt buộc phải human-in-the-loop\nMetamodel đề xuất\nOrgGoal {\nid : String\nname : String\npriority : Integer\n}\n\nAgentRole {\nid : String\nname : String\ncapability : Set(String)\n}\n\nDelegatedGoal {\nid : String\nsourceGoal : OrgGoal\ndelegatedTo : AgentRole\nprocessRef : ProcessFrame\n}\n\nProcessFrame {\nid : String\nstepRef : BPMNElement\nmode : {deterministic, agentic, hybrid}\n}\n\nAutonomyBound {\nid : String\nappliesTo : AgentRole\nscope : String\nforbidden : Set(String)\n}\n\nEscalationRule {\nid : String\ntrigger : Predicate\ntarget : {human, supervisor_agent, committee}\n}\n\nExplanationDuty {\nid : String\nappliesTo : AgentRole\nwhen : Predicate\noutputForm : {text, structured_report, trace_log}\n}\n\nHumanOverridePoint {\nid : String\nstepRef : BPMNElement\njustificationRequired : Boolean\n}\nQuan hệ ngữ nghĩa cốt lõi\ndelegates(OrgGoal, AgentRole)\nexecutesIn(DelegatedGoal, ProcessFrame)\nboundedBy(AgentRole, AutonomyBound)\nescalatesVia(ProcessFrame, EscalationRule)\nexplainsVia(AgentRole, ExplanationDuty)\noverridableAt(ProcessFrame, HumanOverridePoint)\nĐịnh nghĩa hình thức tối thiểu\naligned(dg, pf, ar) ≡\ndelegates(dg.sourceGoal, ar) ∧\nexecutesIn(dg, pf) ∧\nallowed(ar, pf, bound(ar)) = true\n\nunsafeAutonomy(ar, pf) ≡\npf.mode = agentic ∧\n¬∃ b : boundedBy(ar, b)\n\nunaccountableStep(pf) ≡\npf.mode = agentic ∧\n¬∃ e : escalatesVia(pf, e) ∧\n¬∃ h : overridableAt(pf, h)\n1. Case Study — Hệ thống Agentic Xử lý Khiếu nại Bảo hiểm\nBối cảnh\nMột công ty bảo hiểm muốn chuyển quy trình xử lý khiếu nại sang agentic mode.\n\nProcess hiện tại:\n\nT1: Tiếp nhận hồ sơ\n→ T2: Kiểm tra hồ sơ\n→ T3: Điều tra tổn thất\n→ T4: Đề xuất mức bồi thường\n→ T5: Phê duyệt\n→ T6: Thông báo khách hàng\nHọ đưa vào 3 agent:\n\nDocAgent: đọc và kiểm tra hồ sơ\nInvestigationAgent: tổng hợp bằng chứng\nSettlementAgent: đề xuất mức bồi thường\nGoal tổ chức\nG1: Xử lý hồ sơ trong 48 giờ\nG2: Mọi quyết định bồi thường phải có chứng cứ\nG3: Trường hợp nghi ngờ gian lận phải được chuyển cho chuyên viên người thật\nVấn đề nếu chỉ có BPMN + agent implementation\nTa có thể biết:\n\nT2 do DocAgent xử lý\nT3 do InvestigationAgent xử lý\nT4 do SettlementAgent xử lý\nNhưng vẫn chưa rõ:\n\nT4 có được agent tự quyết hoàn toàn hay không?\nkhi confidence thấp thì có cần escalate không?\ngoal G3 được phản ánh ở step nào?\nagent nào phải giải thích quyết định?\nVới AgenticFlow-Goal\nOrgGoal:\nG1: xử lý trong 48 giờ\nG2: quyết định có chứng cứ\nG3: nghi ngờ gian lận phải escalate\n\nProcessFrame:\nPF2: T2, mode=hybrid\nPF3: T3, mode=agentic\nPF4: T4, mode=agentic\nPF5: T5, mode=deterministic\/human approval\n\nDelegatedGoal:\nDG1: G2 -> InvestigationAgent at PF3\nDG2: G2 -> SettlementAgent at PF4\nDG3: G3 -> SettlementAgent at PF4\n\nAutonomyBound:\nAB1: SettlementAgent may propose compensation <= threshold_X\nforbidden = {final_approval, fraud_closure_without_human}\n\nEscalationRule:\nER1: if fraud_score > 0.7 -> escalate to human investigator\nER2: if evidence_completeness < 0.8 -> escalate to human reviewer\n\nExplanationDuty:\nEX1: SettlementAgent must produce structured decision report at PF4\n\nHumanOverridePoint:\nHO1: T5 approval step\nKết quả\nBây giờ hệ thống có thể kiểm tra:\n\ncó step agentic nào chưa có autonomy bound không?\ncó delegated goal nào chưa gắn vào process frame không?\ncó decision agentic nào thiếu escalation path không?\n1. Phản biện và Đánh giá Khả thi\n4.1 Phản biện có cơ sở\nPhản biện 1: \"BPMN + text policy là đủ\"\n\nPhản hồi: text policy có thể mô tả quy định, nhưng không đủ để:\n\nvalidate tự động\ntruy vết goal nào giao cho agent nào\nphát hiện step agentic không có override\nPhản biện 2: \"Agent language đã mô tả được plan và decision rồi\"\n\nPhản hồi: agent language mô tả logic nội bộ của agent. Nhưng nó không mô tả rõ:\n\nprocess frame ở mức tổ chức\ndelegated organizational goals\naccountability\/human override semantics\nPhản biện 3: \"Có thể dùng role\/norm trong MAS organization models\"\n\nPhản hồi: đúng, nhưng các model đó thường không nối tự nhiên với BPMN process step và business goals theo cách mà doanh nghiệp dễ đọc và kiểm tra.\n\n4.2 Đánh giá Khả thi\nThành phần Độ khó\nMetamodel goal-process-agent Trung bình\nMapping sang BPMN Trung bình\nOCL validation rules Trung bình\nFull execution semantics Cao\nKhuyến nghị scope thạc sĩ:\n\nlàm language\nlàm checker\nlàm mapping sang BPMN\nkhông cần làm full agent platform\n1. Đóng góp đề xuất — AgenticFlow-Goal\nTên\nAgenticFlow-Goal: Ngôn ngữ cho goal-process-agent alignment trong agentic BPM\n\nOCL Constraints mẫu\n-- C1: Mọi DelegatedGoal phải có sourceGoal và delegatedTo\ncontext DelegatedGoal inv DelegationComplete:\nself.sourceGoal <> null and self.delegatedTo <> null\n\n-- C2: Mọi ProcessFrame ở mode=agentic phải có AutonomyBound\ncontext ProcessFrame inv AgenticStepHasBound:\nself.mode = agentic implies\nAutonomyBound.allInstances()->exists(b | b.appliesTo = self.assignedRole)\n\n-- C3: Mọi step agentic phải có escalation hoặc human override\ncontext ProcessFrame inv AgenticStepAccountable:\nself.mode = agentic implies\nEscalationRule.allInstances()->exists(e | e.stepRef = self) or\nHumanOverridePoint.allInstances()->exists(h | h.stepRef = self)\n\n-- C4: Mọi delegated goal liên quan đến decision phải có explanation duty\ncontext DelegatedGoal inv DecisionGoalExplained:\nself.processRef.mode = agentic implies\nExplanationDuty.allInstances()->exists(ex | ex.appliesTo = self.delegatedTo)\nĐiểm mới\nYếu tố BPMN \/ agent languages \/ goal models hiện có AgenticFlow-Goal\nProcess structure Có Kế thừa BPMN\nAgent internal reasoning Có Kế thừa agent platforms\nOrganizational goals Có Kế thừa goal modeling\nDelegated goal semantics Yếu Có\nAutonomy bound Yếu Có\nEscalation \/ override \/ explanation Rời rạc Có hệ thống\n1. Scope thạc sĩ\nMetamodel: 7-8 khái niệm chính\nOCL constraints: 4-8 quy tắc\nTool:\nparser goal-process-agent spec\nBPMN annotation\/export\nchecker cho autonomy\/accountability issues\nCase study:\ninsurance claim handling\nautonomous procurement workflow\nEvaluation:\nsố lỗi alignment phát hiện được\nso sánh với BPMN + textual policy baseline\nexpert review về tính rõ ràng của accountability semantics\nThời gian\n18-20 tháng\n\n1. Nguồn chính\nCalvanese et al. (2026). Agentic Business Process Management: A research manifesto. DOI: 10.1016\/j.is.2026.102738\nDe Giacomo et al. (2026). Formal Foundations of Agentic Business Process Management. DOI: 10.48550\/arXiv.2604.17347\nCalegari et al. (2021). Logic-based technologies for multi-agent systems: a systematic literature review. DOI: 10.1007\/s10458-020-09478-3\nDalpiaz, Franch, Horkoff (2016). iStar 2.0. arXiv:1605.07767\nOMG (2013). BPMN 2.0. https:\/\/www.omg.org\/spec\/BPMN\/2.0",
+                    "updatedAt": "2026-05-13T09:34:04.373Z"
                 },
                 {
-                    "id": "page-mo5dro71-sypsel",
-                    "title": "Trang con mới",
-                    "parentId": "page-mo5drfd4-s5c600",
-                    "folder": "Trang kiến thức mới",
+                    "id": "page-mos8kcrr-kp6swa",
+                    "title": "Trang kiến thức mới",
+                    "parentId": "page-mo5dxtu1-3wj6zs",
+                    "folder": "Hiện tại n",
                     "tags": [],
-                    "markdown": "<h1>Trang kiến thức mới<\/h1><p>Nhập ghi chú tại đây.<\/p>",
-                    "updatedAt": "2026-04-19T11:31:46.234Z"
+                    "markdown": "# Tiêu đề mới\n<div><\/div>\n- [ ] Việc cần làm\n- [ ] ada\n- [ ] <br>\n<div><\/div>\n## Tiêu đề phụ",
+                    "updatedAt": "2026-05-13T09:34:04.373Z"
                 }
             ],
-            "exercises": [],
-            "attempts": [],
+            "exercises": [
+                {
+                    "id": "ex-mp1zwvj0-2h29j4",
+                    "workspaceId": "ws-english",
+                    "skill": "Foundation",
+                    "title": "ba122",
+                    "sourcePrompt": "she __ to schoole everyday",
+                    "durationMinutes": null,
+                    "questions": [
+                        {
+                            "type": "multiple_choice_blank",
+                            "prompt": "Choose the correct answer to complete the sentence.",
+                            "gradingMode": "expected",
+                            "explanation": "Câu diễn tả thói quen hàng ngày ở hiện tại đơn với chủ ngữ ngôi thứ 3 số ít.",
+                            "items": [
+                                {
+                                    "id": "item-mp1zwviz-tiby2c",
+                                    "prompt": "she __ to school everyday",
+                                    "expected": "goes",
+                                    "explanation": "Với chủ ngữ là 'she', động từ 'go' phải thêm 'es' thành 'goes' ở thì hiện tại đơn.",
+                                    "choices": [
+                                        "go",
+                                        "goes",
+                                        "going",
+                                        "went"
+                                    ]
+                                }
+                            ],
+                            "id": "q-mp1zwviz-z8swn0"
+                        }
+                    ],
+                    "createdAt": "2026-05-12T02:12:35.100Z"
+                },
+                {
+                    "id": "ex-mo9xc8ik-crtyuz",
+                    "workspaceId": "ws-english",
+                    "skill": "Foundation",
+                    "title": "Bài2",
+                    "sourcePrompt": "",
+                    "questions": [
+                        {
+                            "id": "q0-mo9xc8ik-0v6s98",
+                            "skill": "Foundation",
+                            "type": "multiple_choice_blank",
+                            "prompt": "Chọn đáp án đúng vào chỗ trống",
+                            "items": [
+                                {
+                                    "id": "item0-mo9xc8ik-3jjqej",
+                                    "prompt": "She áda ád",
+                                    "expected": "ád",
+                                    "explanation": "",
+                                    "choices": [
+                                        "ád",
+                                        "a",
+                                        "ád",
+                                        "a"
+                                    ]
+                                }
+                            ],
+                            "explanation": "Chọn đáp án đúng để điền vào chỗ trống.",
+                            "gradingMode": "expected"
+                        }
+                    ],
+                    "createdAt": "2026-04-22T10:42:59.996Z",
+                    "durationMinutes": null
+                },
+                {
+                    "id": "ex-mo9djq0f-ojxhu2",
+                    "workspaceId": "ws-english",
+                    "skill": "Foundation",
+                    "title": "Bài 1",
+                    "sourcePrompt": "",
+                    "questions": [
+                        {
+                            "id": "q0-mo9djq0f-xpe5jo",
+                            "skill": "Foundation",
+                            "type": "multiple_choice_blank",
+                            "prompt": "Chọn đáp án đúng vào chỗ trống",
+                            "items": [
+                                {
+                                    "id": "item0-mo9djq0e-x072sa",
+                                    "prompt": "She __ very nice",
+                                    "expected": "is",
+                                    "explanation": "",
+                                    "choices": [
+                                        "is",
+                                        "are",
+                                        "a",
+                                        "am"
+                                    ]
+                                },
+                                {
+                                    "id": "item1-mo9djq0e-sxs83d",
+                                    "prompt": "She __ very nice",
+                                    "expected": "is",
+                                    "explanation": "",
+                                    "choices": [
+                                        "is",
+                                        "am",
+                                        "are",
+                                        "the"
+                                    ]
+                                },
+                                {
+                                    "id": "item2-mo9djq0e-a1izr1",
+                                    "prompt": "She __ very nice",
+                                    "expected": "is",
+                                    "explanation": "",
+                                    "choices": [
+                                        "a",
+                                        "is",
+                                        "are",
+                                        "am"
+                                    ]
+                                }
+                            ],
+                            "explanation": "Chọn đáp án đúng để điền vào chỗ trống.",
+                            "gradingMode": "expected"
+                        },
+                        {
+                            "id": "q1-mo9dk8ye-9esee0",
+                            "skill": "Foundation",
+                            "type": "rewrite_sentence",
+                            "prompt": "Viết lại câu cho đúng",
+                            "items": [
+                                {
+                                    "id": "item0-mo9dk8ye-512dy9",
+                                    "prompt": "She are very nice",
+                                    "expected": "She is very nice",
+                                    "explanation": "",
+                                    "choices": []
+                                }
+                            ],
+                            "explanation": "Viết lại câu cho đúng ngữ pháp.",
+                            "gradingMode": "expected"
+                        }
+                    ],
+                    "createdAt": "2026-04-22T01:28:56.943Z",
+                    "durationMinutes": null
+                }
+            ],
+            "attempts": [
+                {
+                    "id": "attempt-mp1zx1sm-3app30",
+                    "exerciseId": "ex-mp1zwvj0-2h29j4",
+                    "exerciseTitle": "ba122",
+                    "skill": "Foundation",
+                    "score": 100,
+                    "correct": 1,
+                    "total": 1,
+                    "answers": {
+                        "q-mp1zwviz-z8swn0::item-mp1zwviz-tiby2c": "goes"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q-mp1zwviz-z8swn0",
+                            "questionPrompt": "Choose the correct answer to complete the sentence.",
+                            "questionType": "multiple_choice_blank",
+                            "itemId": "item-mp1zwviz-tiby2c",
+                            "prompt": "she __ to school everyday",
+                            "answer": "goes",
+                            "expected": "goes",
+                            "isCorrect": true,
+                            "requiresAi": false,
+                            "explanation": "Câu trả lời khớp với đáp án."
+                        }
+                    ],
+                    "createdAt": "2026-05-12T02:12:43.222Z"
+                },
+                {
+                    "id": "attempt-mp1zm64x-bvl846",
+                    "exerciseId": "ex-mo9xc8ik-crtyuz",
+                    "exerciseTitle": "Bài2",
+                    "skill": "Foundation",
+                    "score": 100,
+                    "correct": 1,
+                    "total": 1,
+                    "answers": {
+                        "q0-mo9xc8ik-0v6s98::item0-mo9xc8ik-3jjqej": "ád"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q0-mo9xc8ik-0v6s98",
+                            "questionPrompt": "Chọn đáp án đúng vào chỗ trống",
+                            "questionType": "multiple_choice_blank",
+                            "itemId": "item0-mo9xc8ik-3jjqej",
+                            "prompt": "She áda ád",
+                            "answer": "ád",
+                            "expected": "ád",
+                            "isCorrect": true,
+                            "requiresAi": false,
+                            "explanation": "Câu trả lời khớp với đáp án."
+                        }
+                    ],
+                    "createdAt": "2026-05-12T02:04:15.633Z"
+                },
+                {
+                    "id": "attempt-mo8uhsk6-sozbye",
+                    "exerciseId": "ex-mo8so2bs-w5f7j7",
+                    "exerciseTitle": "Bài 2",
+                    "skill": "Foundation",
+                    "score": 0,
+                    "correct": 0,
+                    "total": 1,
+                    "answers": {
+                        "q0-mo8so2bs-zdvgn1": "a"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q0-mo8so2bs-zdvgn1",
+                            "prompt": "She__ so beaty",
+                            "answer": "a",
+                            "expected": "d",
+                            "isCorrect": false,
+                            "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+                        }
+                    ],
+                    "createdAt": "2026-04-21T16:35:34.230Z"
+                },
+                {
+                    "id": "attempt-mo8uhrp0-dw4d88",
+                    "exerciseId": "ex-mo8so2bs-w5f7j7",
+                    "exerciseTitle": "Bài 2",
+                    "skill": "Foundation",
+                    "score": 0,
+                    "correct": 0,
+                    "total": 1,
+                    "answers": {
+                        "q0-mo8so2bs-zdvgn1": "a"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q0-mo8so2bs-zdvgn1",
+                            "prompt": "She__ so beaty",
+                            "answer": "a",
+                            "expected": "d",
+                            "isCorrect": false,
+                            "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+                        }
+                    ],
+                    "createdAt": "2026-04-21T16:35:33.108Z"
+                },
+                {
+                    "id": "attempt-mo8uhmsi-qcuxi7",
+                    "exerciseId": "ex-mo8so2bs-w5f7j7",
+                    "exerciseTitle": "Bài 2",
+                    "skill": "Foundation",
+                    "score": 0,
+                    "correct": 0,
+                    "total": 1,
+                    "answers": {
+                        "q0-mo8so2bs-zdvgn1": "a"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q0-mo8so2bs-zdvgn1",
+                            "prompt": "She__ so beaty",
+                            "answer": "a",
+                            "expected": "d",
+                            "isCorrect": false,
+                            "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+                        }
+                    ],
+                    "createdAt": "2026-04-21T16:35:26.754Z"
+                },
+                {
+                    "id": "attempt-mo8sos99-guh10d",
+                    "exerciseId": "ex-mo8snc7m-ku2v4b",
+                    "exerciseTitle": "Bài 1",
+                    "skill": "Foundation",
+                    "score": 100,
+                    "correct": 2,
+                    "total": 2,
+                    "answers": {
+                        "q0-mo8snc7m-d2t153": "go",
+                        "q1-mo8snc7m-j338w4": "se"
+                    },
+                    "feedback": [
+                        {
+                            "questionId": "q0-mo8snc7m-d2t153",
+                            "prompt": "She ___ to schoold",
+                            "answer": "go",
+                            "expected": "go",
+                            "isCorrect": true,
+                            "explanation": "Câu trả lời khớp với đáp án hoặc đủ thông tin theo yêu cầu."
+                        },
+                        {
+                            "questionId": "q1-mo8snc7m-j338w4",
+                            "prompt": "She ___ to schoold every day",
+                            "answer": "se",
+                            "expected": "se",
+                            "isCorrect": true,
+                            "explanation": "Câu trả lời khớp với đáp án hoặc đủ thông tin theo yêu cầu."
+                        }
+                    ],
+                    "createdAt": "2026-04-21T15:45:01.197Z"
+                }
+            ],
             "mistakes": [],
             "tests": []
         },

@@ -1,1 +1,157 @@
-[]
+[
+    {
+        "id": "attempt-mp1zx1sm-3app30",
+        "exerciseId": "ex-mp1zwvj0-2h29j4",
+        "exerciseTitle": "ba122",
+        "skill": "Foundation",
+        "score": 100,
+        "correct": 1,
+        "total": 1,
+        "answers": {
+            "q-mp1zwviz-z8swn0::item-mp1zwviz-tiby2c": "goes"
+        },
+        "feedback": [
+            {
+                "questionId": "q-mp1zwviz-z8swn0",
+                "questionPrompt": "Choose the correct answer to complete the sentence.",
+                "questionType": "multiple_choice_blank",
+                "itemId": "item-mp1zwviz-tiby2c",
+                "prompt": "she __ to school everyday",
+                "answer": "goes",
+                "expected": "goes",
+                "isCorrect": true,
+                "requiresAi": false,
+                "explanation": "Câu trả lời khớp với đáp án."
+            }
+        ],
+        "createdAt": "2026-05-12T02:12:43.222Z"
+    },
+    {
+        "id": "attempt-mp1zm64x-bvl846",
+        "exerciseId": "ex-mo9xc8ik-crtyuz",
+        "exerciseTitle": "Bài2",
+        "skill": "Foundation",
+        "score": 100,
+        "correct": 1,
+        "total": 1,
+        "answers": {
+            "q0-mo9xc8ik-0v6s98::item0-mo9xc8ik-3jjqej": "ád"
+        },
+        "feedback": [
+            {
+                "questionId": "q0-mo9xc8ik-0v6s98",
+                "questionPrompt": "Chọn đáp án đúng vào chỗ trống",
+                "questionType": "multiple_choice_blank",
+                "itemId": "item0-mo9xc8ik-3jjqej",
+                "prompt": "She áda ád",
+                "answer": "ád",
+                "expected": "ád",
+                "isCorrect": true,
+                "requiresAi": false,
+                "explanation": "Câu trả lời khớp với đáp án."
+            }
+        ],
+        "createdAt": "2026-05-12T02:04:15.633Z"
+    },
+    {
+        "id": "attempt-mo8uhsk6-sozbye",
+        "exerciseId": "ex-mo8so2bs-w5f7j7",
+        "exerciseTitle": "Bài 2",
+        "skill": "Foundation",
+        "score": 0,
+        "correct": 0,
+        "total": 1,
+        "answers": {
+            "q0-mo8so2bs-zdvgn1": "a"
+        },
+        "feedback": [
+            {
+                "questionId": "q0-mo8so2bs-zdvgn1",
+                "prompt": "She__ so beaty",
+                "answer": "a",
+                "expected": "d",
+                "isCorrect": false,
+                "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+            }
+        ],
+        "createdAt": "2026-04-21T16:35:34.230Z"
+    },
+    {
+        "id": "attempt-mo8uhrp0-dw4d88",
+        "exerciseId": "ex-mo8so2bs-w5f7j7",
+        "exerciseTitle": "Bài 2",
+        "skill": "Foundation",
+        "score": 0,
+        "correct": 0,
+        "total": 1,
+        "answers": {
+            "q0-mo8so2bs-zdvgn1": "a"
+        },
+        "feedback": [
+            {
+                "questionId": "q0-mo8so2bs-zdvgn1",
+                "prompt": "She__ so beaty",
+                "answer": "a",
+                "expected": "d",
+                "isCorrect": false,
+                "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+            }
+        ],
+        "createdAt": "2026-04-21T16:35:33.108Z"
+    },
+    {
+        "id": "attempt-mo8uhmsi-qcuxi7",
+        "exerciseId": "ex-mo8so2bs-w5f7j7",
+        "exerciseTitle": "Bài 2",
+        "skill": "Foundation",
+        "score": 0,
+        "correct": 0,
+        "total": 1,
+        "answers": {
+            "q0-mo8so2bs-zdvgn1": "a"
+        },
+        "feedback": [
+            {
+                "questionId": "q0-mo8so2bs-zdvgn1",
+                "prompt": "She__ so beaty",
+                "answer": "a",
+                "expected": "d",
+                "isCorrect": false,
+                "explanation": "Chọn đáp án đúng để điền vào chỗ trống."
+            }
+        ],
+        "createdAt": "2026-04-21T16:35:26.754Z"
+    },
+    {
+        "id": "attempt-mo8sos99-guh10d",
+        "exerciseId": "ex-mo8snc7m-ku2v4b",
+        "exerciseTitle": "Bài 1",
+        "skill": "Foundation",
+        "score": 100,
+        "correct": 2,
+        "total": 2,
+        "answers": {
+            "q0-mo8snc7m-d2t153": "go",
+            "q1-mo8snc7m-j338w4": "se"
+        },
+        "feedback": [
+            {
+                "questionId": "q0-mo8snc7m-d2t153",
+                "prompt": "She ___ to schoold",
+                "answer": "go",
+                "expected": "go",
+                "isCorrect": true,
+                "explanation": "Câu trả lời khớp với đáp án hoặc đủ thông tin theo yêu cầu."
+            },
+            {
+                "questionId": "q1-mo8snc7m-j338w4",
+                "prompt": "She ___ to schoold every day",
+                "answer": "se",
+                "expected": "se",
+                "isCorrect": true,
+                "explanation": "Câu trả lời khớp với đáp án hoặc đủ thông tin theo yêu cầu."
+            }
+        ],
+        "createdAt": "2026-04-21T15:45:01.197Z"
+    }
+]
